@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "31945fed-501e-443e-aeea-649d50b04452",
+    "_postman_id": "3f2b49a4-1a00-40b9-825d-30ed6d020b83",
     "name": "Raizes do Nordeste - Testes API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "49417959",
-    "_collection_link": "https://go.postman.co/collection/49417959-31945fed-501e-443e-aeea-649d50b04452?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/49417959-3f2b49a4-1a00-40b9-825d-30ed6d020b83?source=collection_link"
   },
   "item": [
     {
@@ -87,7 +87,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODIxNDcyMjR9.9S2q_EbGstEhQ1HYfOznPi3jgxkz5qf8DVibKpKQpl4",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODI2NjA1NTV9.zWSMYJjnFWaFNeXjTOOWs9OwduXW7OMeGD1tEo_TQd0",
               "type": "string"
             }
           ]
@@ -129,7 +129,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODIxNDcyMjR9.9S2q_EbGstEhQ1HYfOznPi3jgxkz5qf8DVibKpKQpl4",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODI2NjA1NTV9.zWSMYJjnFWaFNeXjTOOWs9OwduXW7OMeGD1tEo_TQd0",
               "type": "string"
             }
           ]
@@ -146,7 +146,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/4/pagar",
+          "raw": "http://127.0.0.1:5000/api/pedidos/6/pagar",
           "protocol": "http",
           "host": [
             "127",
@@ -158,7 +158,7 @@
           "path": [
             "api",
             "pedidos",
-            "4",
+            "6",
             "pagar"
           ]
         }
@@ -173,7 +173,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODIxNDcyMjR9.9S2q_EbGstEhQ1HYfOznPi3jgxkz5qf8DVibKpKQpl4",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODI2NjA1NTV9.zWSMYJjnFWaFNeXjTOOWs9OwduXW7OMeGD1tEo_TQd0",
               "type": "string"
             }
           ]
@@ -190,7 +190,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/4/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/6/status",
           "protocol": "http",
           "host": [
             "127",
@@ -202,7 +202,7 @@
           "path": [
             "api",
             "pedidos",
-            "4",
+            "6",
             "status"
           ]
         }
@@ -217,7 +217,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODIxNDcyMjR9.9S2q_EbGstEhQ1HYfOznPi3jgxkz5qf8DVibKpKQpl4",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODI2NjA1NTV9.zWSMYJjnFWaFNeXjTOOWs9OwduXW7OMeGD1tEo_TQd0",
               "type": "string"
             }
           ]
@@ -234,7 +234,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/4/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/6/status",
           "protocol": "http",
           "host": [
             "127",
@@ -246,7 +246,7 @@
           "path": [
             "api",
             "pedidos",
-            "4",
+            "6",
             "status"
           ]
         }
