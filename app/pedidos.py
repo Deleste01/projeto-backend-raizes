@@ -10,15 +10,15 @@ pedidos_bp = Blueprint('pedidos', __name__, url_prefix='/api')
 @login_required
 @roles_accepted('funcionario', 'cliente')
 def criar_pedido(current_user):
-    # Rota principal para fazer o pedido, valida estoque e calcula o valor final
+    # rota principal para fazer o pedido, valida estoque e calcula o valor final
     req_data = request.get_json() or {}
     
     unidade_id = req_data.get('unidadeId')
     itens_request = req_data.get('itens', [])
     forma_pagamento = req_data.get('formaPagamento')
-    canal_pedido = req_data.get('canalPedido')  # <-- CORRECAO HUMANA: Arrancamos o 'BALCAO' automatico
+    canal_pedido = req_data.get('canalPedido') 
 
-    # Dominio multi-canal oficial da Rede Raizes do Nordeste
+    # dominio multi-canal oficial da Rede Raizes do Nordeste
     canais_permitidos = ['APP', 'TOTEM', 'BALCAO', 'PICKUP', 'WEB']
 
     if not unidade_id or not itens_request or not forma_pagamento or not canal_pedido:
@@ -45,7 +45,7 @@ def criar_pedido(current_user):
             if not prod_obj:
                 return jsonify({'error': 'PRODUTO_NAO_ENCONTRADO', 'message': f'Produto ID {prod_id} não existe.'}), 404
 
-            # Verifica se tem o produto em estoque na unidade correta
+            # verifica se tem o produto em estoque na unidade correta
             item_estoque = Estoque.query.filter_by(unidade_id=unidade_id, produto_id=prod_id).first()
             if not item_estoque or item_estoque.quantidade < qtd:
                 return jsonify({
@@ -56,7 +56,7 @@ def criar_pedido(current_user):
             preco_atual = prod_obj.preco
             total_acumulado += (preco_atual * qtd)
 
-            # Baixa a quantidade do estoque da unidade física
+            # baixa a quantidade do estoque da unidade física
             item_estoque.quantidade -= qtd
 
             novo_item = ItemPedido(
@@ -92,7 +92,7 @@ def criar_pedido(current_user):
 @login_required
 @roles_accepted('funcionario')
 def pagar_pedido(current_user, pedido_id):
-    # Simula o pagamento recebido pelo sistema de caixa (mock)
+    # simula o pagamento recebido pelo sistema de caixa (mock)
     ped = Pedido.query.get(pedido_id)
     
     if not ped:
@@ -120,7 +120,7 @@ def pagar_pedido(current_user, pedido_id):
 @login_required
 @roles_accepted('funcionario')
 def atualizar_status(current_user, pedido_id):
-    # Rota para avancar o status do pedido na linha de producao da lanchonete
+    # rota para avancar o status do pedido na linha de producao da lanchonete
     req_data = request.get_json() or {}
     novo_status = req_data.get('status')
     

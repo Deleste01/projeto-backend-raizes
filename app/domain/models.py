@@ -14,15 +14,15 @@ class Usuario(db.Model):
     criado_em = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def set_senha(self, senha):
-        # Gera o hash seguro para salvar a senha no banco
+        # gera hash da senha
         self.senha_hash = generate_password_hash(senha)
 
     def verificar_senha(self, senha):
-        # Valida se a senha digitada bate com a salva
+        # valida se a senha digitada bate com a salva
         return check_password_hash(self.senha_hash, senha)
 
     def to_dict(self):
-        # Converte os dados do usuario para enviar como JSON
+        # converte os dados do usuario para enviar como JSON
         return {
             'id': self.id,
             'nome': self.nome,
@@ -72,7 +72,7 @@ class Estoque(db.Model):
     produto_id = db.Column(db.Integer, db.ForeignKey('produtos.id'), nullable=False)
     quantidade = db.Column(db.Integer, nullable=False, default=0)
 
-    # Relacionamentos para facilitar as consultas entre tabelas
+    # relacionamentos para facilitar as consultas entre tabelas
     unidade = db.relationship('Unidade', backref='estoques')
     produto = db.relationship('Produto', backref='estoques')
 
@@ -88,7 +88,7 @@ class Pedido(db.Model):
     total = db.Column(db.Numeric(10, 2), nullable=False, default=0.00)
     criado_em = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
-    # Vinculos relacionais do pedido
+    # vinculos relacionais do pedido
     unidade = db.relationship('Unidade')
     usuario = db.relationship('Usuario')
     itens = db.relationship('ItemPedido', backref='pedido', cascade="all, delete-orphan")

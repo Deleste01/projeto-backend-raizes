@@ -8,7 +8,7 @@ from functools import wraps
 auth_bp = Blueprint('auth', __name__, url_prefix='/api/auth')
 
 def login_required(f):
-    # Interceptador para validar o token JWT nas rotas protegidas
+    # interceptador para validar o token JWT nas rotas protegidas
     @wraps(f)
     def decorated(*args, **kwargs):
         token = None
@@ -22,7 +22,7 @@ def login_required(f):
             return jsonify({'error': 'TOKEN_AUSENTE', 'message': 'Token de autenticação não fornecido.'}), 401
 
         try:
-            # Descriptografa o token com a chave do app
+            # descriptografa o token com a chave do app
             payload = jwt.decode(token, current_app.config['JWT_SECRET_KEY'], algorithms=['HS256'])
             user_logado = Usuario.query.get(payload['usuario_id'])
             
@@ -37,14 +37,14 @@ def login_required(f):
         except jwt.InvalidTokenError:
             return jsonify({'error': 'TOKEN_INVALIDO', 'message': 'Token inválido ou corrompido.'}), 401
 
-        # Manda o objeto do usuario adiante na rota
+        # manda o objeto do usuario adiante na rota
         return f(user_logado, *args, **kwargs)
 
     return decorated
 
 
 def roles_accepted(*perfis_permitidos):
-    # Verifica o nivel de permissao (role) do usuario
+    # verifica o nivel de permissao (role) do usuario
     def decorator(f):
         @wraps(f)
         def decorated_function(user_logado, *args, **kwargs):
@@ -60,7 +60,7 @@ def roles_accepted(*perfis_permitidos):
 
 @auth_bp.route('/register', methods=['POST'])
 def register():
-    # Rota para cadastrar novos funcionarios ou clientes
+    # rota para cadastrar novos funcionarios ou clientes
     req_data = request.get_json() or {}
     
     if 'nome' not in req_data or 'email' not in req_data or 'senha' not in req_data:
@@ -84,14 +84,14 @@ def register():
             'usuario': novo.to_dict()
         }), 201
         
-    except Exception as erro:
+    except Exception as e:
         db.session.rollback()
-        return jsonify({'erro': 'Erro interno ao salvar no banco', 'detalhe': str(erro)}), 500
+        return jsonify({'erro': 'Falha ao salvar no banco de dados', 'detalhe': str(e)}), 500
 
 
 @auth_bp.route('/login', methods=['POST'])
 def login():
-    # Valida as credenciais e devolve o token de acesso
+    # valida as credenciais e devolve o token de acesso
     req_data = request.get_json() or {}
     
     if 'email' not in req_data or 'senha' not in req_data:
@@ -102,7 +102,7 @@ def login():
     if not user or not user.verificar_senha(req_data['senha']):
         return jsonify({'erro': 'E-mail ou senha inválidos'}), 401
         
-    # Gera o token com duracao de 24h
+    # gera o token com duracao de 24h
     access_token = jwt.encode({
         'usuario_id': user.id,
         'exp': datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=24)

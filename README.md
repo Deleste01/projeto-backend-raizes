@@ -1,21 +1,16 @@
-# Backend - Raízes do Nordeste (API REST)
+# API REST - Raízes do Nordeste
 
-Projeto de Back-end desenvolvido para a rede de lanchonetes multicanal "Raízes do Nordeste", contemplando gestão de cardápio, controle de estoque por unidade e registro de pedidos com rastreabilidade de canal.
+Backend desenvolvido em Python e Flask para o Projeto Multidisciplinar (Trilha Back-End). A aplicação gerencia o cadastro de unidades físicas, cardápio regionalizado, controle de estoque por loja e fluxo de pedidos multicanal.
 
----
+## requisitos de ambiente
 
-## 📋 Pré-requisitos
+* Python 3.10 ou superior
+* Git
+* Postman ou Insomnia (para execução da suíte de testes)
 
-Antes de começar, você precisará ter instalado em sua máquina:
-* [Python 3.10+](https://www.python.org/downloads/)
-* [Git](https://git-scm.com/)
-* Gerenciador de coleções de API ([Postman](https://www.postman.com/) ou [Insomnia](https://insomnia.rest/))
+## instruções para execução local
 
----
-
-## 🚀 Como executar o projeto localmente
-
-### 1. Clone o repositório
+### 1. Clonar o repositório
 ```bash
-git clone [https://github.com/SEU_USUARIO_GITHUB/projeto-backend-raizes.git](https://github.com/SEU_USUARIO_GITHUB/projeto-backend-raizes.git)
+git clone [https://github.com/Deleste01/projeto-backend-raizes.git](https://github.com/Deleste01/projeto-backend-raizes.git)
 cd projeto-backend-raizes
