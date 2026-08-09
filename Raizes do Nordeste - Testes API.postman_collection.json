@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "11925b5c-70b2-4bab-8843-20ce055084ac",
+    "_postman_id": "729d4af3-9216-4bbb-86d0-fe402bc53c3a",
     "name": "Raizes do Nordeste - Testes API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "49417959",
-    "_collection_link": "https://go.postman.co/collection/49417959-11925b5c-70b2-4bab-8843-20ce055084ac?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/49417959-729d4af3-9216-4bbb-86d0-fe402bc53c3a?source=collection_link"
   },
   "item": [
     {
@@ -81,6 +81,26 @@
     },
     {
       "name": "T03 - Criar Pedido (Totem)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "",
+              "let resposta = pm.response.json();",
+              "pm.collectionVariables.set(\"pedido_id\", resposta.pedidoId);",
+              "pm.test(\"ID do Pedido salvo com sucesso\", function () {",
+              "    pm.expect(pm.collectionVariables.get(\"pedido_id\")).to.eql(resposta.pedidoId);",
+              "});",
+              "",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "auth": {
           "type": "bearer",
@@ -146,7 +166,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/5/pagar",
+          "raw": "http://127.0.0.1:5000/api/pedidos/{{pedido_id}}/pagar",
           "protocol": "http",
           "host": [
             "127",
@@ -158,7 +178,7 @@
           "path": [
             "api",
             "pedidos",
-            "5",
+            "{{pedido_id}}",
             "pagar"
           ]
         }
@@ -190,7 +210,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/5/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/{{pedido_id}}/status",
           "protocol": "http",
           "host": [
             "127",
@@ -202,7 +222,7 @@
           "path": [
             "api",
             "pedidos",
-            "5",
+            "{{pedido_id}}",
             "status"
           ]
         }
@@ -234,7 +254,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/5/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/{{pedido_id}}/status",
           "protocol": "http",
           "host": [
             "127",
@@ -246,7 +266,7 @@
           "path": [
             "api",
             "pedidos",
-            "5",
+            "{{pedido_id}}",
             "status"
           ]
         }
@@ -439,7 +459,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/5/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/{{pedido_id}}/status",
           "protocol": "http",
           "host": [
             "127",
@@ -451,7 +471,7 @@
           "path": [
             "api",
             "pedidos",
-            "5",
+            "{{pedido_id}}",
             "status"
           ]
         }
@@ -483,7 +503,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/5/pagar",
+          "raw": "http://127.0.0.1:5000/api/pedidos/{{pedido_id}}/pagar",
           "protocol": "http",
           "host": [
             "127",
@@ -495,12 +515,18 @@
           "path": [
             "api",
             "pedidos",
-            "5",
+            "{{pedido_id}}",
             "pagar"
           ]
         }
       },
       "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "pedido_id",
+      "value": ""
     }
   ]
 }
