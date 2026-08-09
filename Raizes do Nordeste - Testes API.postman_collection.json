@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "c0e0fadc-e735-4855-a7f7-9b840148dfda",
+    "_postman_id": "11925b5c-70b2-4bab-8843-20ce055084ac",
     "name": "Raizes do Nordeste - Testes API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "49417959",
-    "_collection_link": "https://go.postman.co/collection/49417959-c0e0fadc-e735-4855-a7f7-9b840148dfda?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/49417959-11925b5c-70b2-4bab-8843-20ce055084ac?source=collection_link"
   },
   "item": [
     {
@@ -146,7 +146,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/2/pagar",
+          "raw": "http://127.0.0.1:5000/api/pedidos/5/pagar",
           "protocol": "http",
           "host": [
             "127",
@@ -158,7 +158,7 @@
           "path": [
             "api",
             "pedidos",
-            "2",
+            "5",
             "pagar"
           ]
         }
@@ -190,7 +190,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/2/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/5/status",
           "protocol": "http",
           "host": [
             "127",
@@ -202,7 +202,7 @@
           "path": [
             "api",
             "pedidos",
-            "2",
+            "5",
             "status"
           ]
         }
@@ -234,7 +234,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/2/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/5/status",
           "protocol": "http",
           "host": [
             "127",
@@ -246,7 +246,7 @@
           "path": [
             "api",
             "pedidos",
-            "2",
+            "5",
             "status"
           ]
         }
@@ -439,7 +439,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/2/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/5/status",
           "protocol": "http",
           "host": [
             "127",
@@ -451,7 +451,7 @@
           "path": [
             "api",
             "pedidos",
-            "2",
+            "5",
             "status"
           ]
         }
@@ -483,7 +483,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/2/pagar",
+          "raw": "http://127.0.0.1:5000/api/pedidos/5/pagar",
           "protocol": "http",
           "host": [
             "127",
@@ -495,7 +495,7 @@
           "path": [
             "api",
             "pedidos",
-            "2",
+            "5",
             "pagar"
           ]
         }
