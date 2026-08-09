@@ -79,7 +79,24 @@ Abra o Postman e importe o arquivo .json.
 
 A coleção possui 12 testes sequenciais que cobrem o caminho feliz (criar pedido, pagar, atualizar status) e as validações de regras de negócio (falta de estoque, falta de permissão de acesso, etc).
 
-Aviso importante: Lembre de rodar a requisição de Login (T02) primeiro. Ela vai retornar um Token JWT. Copie esse token e cole-o na aba Authorization (como Bearer Token) das próximas requisições para não ser bloqueado pela API.
+Aviso Crítico sobre os Perfis e Tokens:
+Para testar os bloqueios de segurança (LGPD/Roles) sem precisar fazer cadastros manuais, o sistema já inicia com dois usuários pré-configurados. Você precisará rodar a rota de Login (T02) com eles para obter os Tokens JWT adequados:
+
+Perfil Cliente
+
+E-mail: cliente@raizes.com
+
+Senha: cliente123
+
+Onde usar: Utilize o token deste usuário para rodar os primeiros testes (criação do pedido) e, obrigatoriamente, no teste T11 (Acesso Negado 403). A API vai reconhecer o perfil restrito e barrar a tentativa de atualizar a entrega.
+
+Perfil Funcionário
+
+E-mail: gustavo@raizes.com
+
+Senha: meusegredo123
+
+Onde usar: Utilize o token deste usuário para rodar os testes de simulação de pagamento (T04) e os testes de atualização de status da cozinha (T05 e T06).
 
 Segurança e Privacidade (LGPD)
 A arquitetura e as regras de negócio foram projetadas respeitando diretrizes essenciais de segurança e proteção de dados:

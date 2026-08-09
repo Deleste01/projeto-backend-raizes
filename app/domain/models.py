@@ -20,24 +20,26 @@ class Usuario(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     senha_hash = db.Column(db.String(255), nullable=False)
     role = db.Column(db.String(20), default='funcionario')
+    pontos_fidelidade = db.Column(db.Integer, default=0) 
     ativo = db.Column(db.Boolean, default=True)
     criado_em = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def set_senha(self, senha):
-        # gera hash da senha
+        
         self.senha_hash = generate_password_hash(senha)
 
     def verificar_senha(self, senha):
-        # valida se a senha digitada bate com a salva
+        
         return check_password_hash(self.senha_hash, senha)
 
     def to_dict(self):
-        # converte os dados do usuario para enviar como JSON
+        
         return {
             'id': self.id,
             'nome': self.nome,
             'email': self.email,
             'role': self.role,
+            'pontosFidelidade': self.pontos_fidelidade, 
             'ativo': self.ativo,
             'criadoEm': self.criado_em.isoformat() if self.criado_em else None
         }

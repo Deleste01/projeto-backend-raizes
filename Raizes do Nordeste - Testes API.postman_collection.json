@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "15b945f0-64b2-4b5d-952c-986128c63f00",
+    "_postman_id": "c0e0fadc-e735-4855-a7f7-9b840148dfda",
     "name": "Raizes do Nordeste - Testes API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "49417959",
-    "_collection_link": "https://go.postman.co/collection/49417959-15b945f0-64b2-4b5d-952c-986128c63f00?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/49417959-c0e0fadc-e735-4855-a7f7-9b840148dfda?source=collection_link"
   },
   "item": [
     {
@@ -87,7 +87,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjUzNDZ9.BuG1nTkjvszAJ4pMOwUEihXwAs2N48sZAG-jTFxEDJI",
               "type": "string"
             }
           ]
@@ -96,7 +96,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"unidadeId\": 1,\n  \"canalPedido\": \"TOTEM\",\n  \"formaPagamento\": \"PIX\",\n  \"itens\": [\n    {\"produtoId\": 101, \"quantidade\": 2}\n  ]\n}",
+          "raw": "{\n  \"unidadeId\": 1,\n  \"canalPedido\": \"TOTEM\",\n  \"formaPagamento\": \"PIX\",\n  \"itens\": [\n    {\"produtoId\": 1, \"quantidade\": 2}\n  ]\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -129,7 +129,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjUzNDZ9.BuG1nTkjvszAJ4pMOwUEihXwAs2N48sZAG-jTFxEDJI",
               "type": "string"
             }
           ]
@@ -146,7 +146,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/6/pagar",
+          "raw": "http://127.0.0.1:5000/api/pedidos/2/pagar",
           "protocol": "http",
           "host": [
             "127",
@@ -158,7 +158,7 @@
           "path": [
             "api",
             "pedidos",
-            "6",
+            "2",
             "pagar"
           ]
         }
@@ -173,7 +173,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjUzNDZ9.BuG1nTkjvszAJ4pMOwUEihXwAs2N48sZAG-jTFxEDJI",
               "type": "string"
             }
           ]
@@ -190,7 +190,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/6/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/2/status",
           "protocol": "http",
           "host": [
             "127",
@@ -202,7 +202,7 @@
           "path": [
             "api",
             "pedidos",
-            "6",
+            "2",
             "status"
           ]
         }
@@ -217,7 +217,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjUzNDZ9.BuG1nTkjvszAJ4pMOwUEihXwAs2N48sZAG-jTFxEDJI",
               "type": "string"
             }
           ]
@@ -234,7 +234,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/6/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/2/status",
           "protocol": "http",
           "host": [
             "127",
@@ -246,7 +246,7 @@
           "path": [
             "api",
             "pedidos",
-            "6",
+            "2",
             "status"
           ]
         }
@@ -263,7 +263,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"unidadeId\": 1,\n  \"canalPedido\": \"TOTEM\",\n  \"formaPagamento\": \"PIX\",\n  \"itens\": [{\"produtoId\": 101, \"quantidade\": 1}]\n}",
+          "raw": "{\n  \"unidadeId\": 1,\n  \"canalPedido\": \"TOTEM\",\n  \"formaPagamento\": \"PIX\",\n  \"itens\": [{\"produtoId\": 1, \"quantidade\": 1}]\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -296,7 +296,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjUzNDZ9.BuG1nTkjvszAJ4pMOwUEihXwAs2N48sZAG-jTFxEDJI",
               "type": "string"
             }
           ]
@@ -305,7 +305,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"unidadeId\": 1,\n  \"formaPagamento\": \"PIX\",\n  \"itens\": [{\"produtoId\": 101, \"quantidade\": 1}]\n}",
+          "raw": "{\n  \"unidadeId\": 1,\n  \"formaPagamento\": \"PIX\",\n  \"itens\": [{\"produtoId\": 1, \"quantidade\": 1}]\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -338,7 +338,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjUzNDZ9.BuG1nTkjvszAJ4pMOwUEihXwAs2N48sZAG-jTFxEDJI",
               "type": "string"
             }
           ]
@@ -347,7 +347,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"unidadeId\": 1,\n  \"canalPedido\": \"TOTEM\",\n  \"formaPagamento\": \"PIX\",\n  \"itens\": [\n    {\"produtoId\": 101, \"quantidade\": 99}\n  ]\n}",
+          "raw": "{\n  \"unidadeId\": 1,\n  \"canalPedido\": \"TOTEM\",\n  \"formaPagamento\": \"PIX\",\n  \"itens\": [\n    {\"produtoId\": 1, \"quantidade\": 99}\n  ]\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -380,7 +380,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjUzNDZ9.BuG1nTkjvszAJ4pMOwUEihXwAs2N48sZAG-jTFxEDJI",
               "type": "string"
             }
           ]
@@ -422,7 +422,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjYwNDN9.OqJgCVlWY-0oEfuaU-lfnVCoK3no5MhvXWgQ2Bp0FEU",
               "type": "string"
             }
           ]
@@ -439,7 +439,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/3/status",
+          "raw": "http://127.0.0.1:5000/api/pedidos/2/status",
           "protocol": "http",
           "host": [
             "127",
@@ -451,7 +451,7 @@
           "path": [
             "api",
             "pedidos",
-            "3",
+            "2",
             "status"
           ]
         }
@@ -466,7 +466,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE3ODYzMjUzNDZ9.BuG1nTkjvszAJ4pMOwUEihXwAs2N48sZAG-jTFxEDJI",
               "type": "string"
             }
           ]
@@ -483,7 +483,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:5000/api/pedidos/3/pagar",
+          "raw": "http://127.0.0.1:5000/api/pedidos/2/pagar",
           "protocol": "http",
           "host": [
             "127",
@@ -495,7 +495,7 @@
           "path": [
             "api",
             "pedidos",
-            "3",
+            "2",
             "pagar"
           ]
         }
