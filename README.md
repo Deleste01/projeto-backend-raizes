@@ -1,84 +1,93 @@
-API REST - Raízes do Nordeste
-Backend desenvolvido em Python (Flask) para o Projeto Multidisciplinar (Trilha Back-End). O sistema gerencia o cadastro de unidades físicas, cardápio regionalizado, controle de estoque por loja e o fluxo de pedidos multicanal da rede.
+# Raízes do Nordeste - API REST (Back-End)
 
-Requisitos de Ambiente
-Python 3.10 ou superior
+Esse é o repositório do backend do projeto Raízes do Nordeste, desenvolvido para a disciplina de Projeto Multidisciplinar. A API foi construída em Python com Flask e tem como objetivo centralizar e gerenciar unidades, cardápio, estoque e os pedidos multicanal da rede.
 
-Git (opcional, caso prefira baixar via ZIP)
+## O que você vai precisar
 
-Postman ou Insomnia (para rodar a suíte de testes)
+Antes de começar, certifique-se de ter instalado na sua máquina:
+- Python 3.10 ou superior
+- Git (opcional, caso prefira baixar o código via arquivo ZIP direto do GitHub)
+- Postman ou Insomnia (para importar e executar a coleção de testes)
 
-Como rodar o projeto localmente
-1. Baixar o projeto
-Você pode clonar o repositório via Git:
+---
 
-Bash
-git clone https://github.com/Deleste01/projeto-backend-raizes.git
+## Como rodar o projeto localmente
+
+Siga a ordem dos comandos abaixo para configurar a aplicação do zero.
+
+### 1. Baixando o código
+Abra o seu terminal e faça o clone do repositório:
+```bash
+git clone [https://github.com/Deleste01/projeto-backend-raizes.git](https://github.com/Deleste01/projeto-backend-raizes.git)
 cd projeto-backend-raizes
-Ou, se preferir, baixe o código-fonte em formato ZIP diretamente pelo GitHub e extraia a pasta. Lembre-se de abrir o terminal dentro da pasta principal do projeto (a que contém o arquivo run.py).
 
-2. Criar e ativar o ambiente virtual (Recomendado)
-Para evitar conflito de bibliotecas no seu computador, vamos isolar o ambiente.
+(Se preferiu baixar o ZIP, extraia o arquivo e abra o terminal dentro da pasta principal do projeto).
 
-No Linux/Mac:
+2. Criando e ativando o Ambiente Virtual (venv)
+É recomendado o uso de um ambiente virtual para isolar as bibliotecas do projeto.
+
+Primeiro, crie o ambiente virtual rodando o comando:
 
 Bash
-python3 -m venv venv
-source venv/bin/activate
-No Windows (PowerShell):
-Se você receber um erro vermelho dizendo que a execução de scripts está desabilitada, rode este comando primeiro para destravar:
-
-PowerShell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-Depois, crie e ative o ambiente:
-
-PowerShell
 python -m venv venv
+Em seguida, ative o ambiente de acordo com o seu sistema operacional:
+
+Para Linux e macOS:
+
+Bash
+source venv/bin/activate
+Para Windows (PowerShell / CMD):
+
+PowerShell
 .\venv\Scripts\activate
-3. Instalar as dependências
-Com o ambiente ativado (venv), instale todas as bibliotecas necessárias:
+Aviso para usuários de Windows: se o PowerShell bloquear a execução com um erro vermelho de permissão, rode este comando primeiro para destravar a execução de scripts: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+3. Instalando as dependências
+Com o seu ambiente virtual ativado (você verá um (venv) no início da linha do terminal), instale as bibliotecas necessárias:
 
 Bash
 pip install -r requirements.txt
-4. Configurar variáveis de ambiente
-Crie o seu arquivo de ambiente local fazendo uma cópia do exemplo que deixei no repositório:
+4. Configurando as Variáveis de Ambiente
+A API precisa de um arquivo de configuração para rodar. Você só precisa duplicar o arquivo de exemplo.
+
+No Linux ou Mac:
 
 Bash
 cp .env.example .env
-(No Windows, você pode simplesmente copiar e colar o arquivo .env.example na mesma pasta e renomear a cópia para .env).
+No Windows:
 
-5. Iniciar a API e o Banco de Dados
-Para dar a partida no servidor, rode o comando abaixo na raiz do projeto:
+PowerShell
+copy .env.example .env
+5. Subindo o Banco de Dados e a API
+Com tudo configurado, inicie o servidor:
 
 Bash
 python run.py
-A API estará rodando por padrão em [http://127.0.0.1:5000](http://127.0.0.1:5000).
-Nota: Ao rodar este comando, o sistema automaticamente verifica o banco de dados (SQLite) e já realiza uma carga inicial de dados (seeding) com usuários e produtos para facilitar os seus testes. Não é necessário rodar scripts de banco manualmente.
+A API estará online e acessível no endereço: http://127.0.0.1:5000
+
+Nota sobre o Banco de Dados: Eu configurei o script run.py para automatizar a criação do banco de dados (SQLite) e realizar a carga inicial de produtos e usuários assim que o servidor é ligado. Não é necessário executar comandos de migration manualmente.
 
 Documentação e Testes
-Swagger / OpenAPI
-Com a aplicação rodando, você pode acessar a documentação interativa dos contratos da API (Swagger) pelo navegador na rota: [http://127.0.0.1:5000/api/docs](http://127.0.0.1:5000/api/docs). Lá estão os schemas, status codes esperados e os formatos padronizados de erro.
+Swagger
+A documentação visual da API sobe automaticamente junto com o servidor. Para visualizar os endpoints, os schemas de requisição/resposta e testar as rotas, acesse no seu navegador:
+http://127.0.0.1:5000/api/docs
 
-Coleção de Testes (Postman)
-Na raiz do repositório, você vai encontrar um arquivo .json com a coleção completa de testes (ex: testes_postman.json ou Raizes do Nordeste - Testes API.postman_collection.json).
+Postman
+O arquivo Raizes do Nordeste - Testes API.postman_collection.json está na raiz deste repositório e contém todos os cenários de teste mapeados.
 
-Para testar o fluxo:
+Abra o Postman e importe o arquivo .json.
 
-Abra o Postman e clique em Import.
+A coleção possui 12 testes sequenciais que cobrem o caminho feliz (criar pedido, pagar, atualizar status) e as validações de regras de negócio (falta de estoque, falta de permissão de acesso, etc).
 
-Selecione o arquivo .json que está na pasta do projeto.
-
-A coleção possui 12 cenários mapeados em sequência (positivos e negativos), cobrindo desde autenticação e regras de negócio até falhas de pagamento e controle de estoque.
-
-Importante: Lembre-se de rodar primeiro a rota de Login (T02) para obter o Token JWT. Copie esse token e insira na aba Authorization (como Bearer Token) das próximas requisições protegidas.
+Aviso importante: Lembre de rodar a requisição de Login (T02) primeiro. Ela vai retornar um Token JWT. Copie esse token e cole-o na aba Authorization (como Bearer Token) das próximas requisições para não ser bloqueado pela API.
 
 Segurança e Privacidade (LGPD)
-A arquitetura e as regras de negócio foram pensadas respeitando as diretrizes de segurança e a Lei Geral de Proteção de Dados:
+A arquitetura e as regras de negócio foram projetadas respeitando diretrizes essenciais de segurança e proteção de dados:
 
-Finalidade e Minimização: Coletamos apenas dados estritamente necessários (nome e e-mail) no momento do cadastro. A finalidade é unicamente a identificação do cliente no fluxo de pedidos (Base Legal: Execução de Contrato).
+Minimização de Dados (LGPD): No cadastro do cliente, peço apenas o nome e o e-mail. A base legal utilizada é a Execução de Contrato, pois a aplicação necessita apenas do básico para identificar de quem é o pedido.
 
-Armazenamento Seguro: As senhas dos usuários nunca são armazenadas em texto plano. Utilizo o algoritmo de hash do werkzeug.security para garantir a proteção total das credenciais no banco de dados.
+Senhas com Hash: Nenhuma credencial é armazenada em texto plano no banco de dados. Usei a biblioteca werkzeug.security para gerar e validar o hash das senhas.
 
-Privacidade nos Contratos: Os endpoints que retornam dados de usuário foram modelados para omitir hashes de senha e outros dados sensíveis nas respostas (Responses JSON).
+Omissão de dados sensíveis: Tomei o cuidado de omitir dados sensíveis no retorno da API. Operações de consulta de usuários, por exemplo, não devolvem a senha no JSON.
 
-Controle de Acesso e Autorização: O sistema possui proteção rigorosa em rotas sensíveis utilizando tokens JWT. Ele valida não apenas a autenticação, mas a autorização baseada em perfis (role). Por exemplo, clientes não têm permissão para atualizar status de produção da cozinha ou alterar estoque, limitando significativamente a superfície de ataques.
+Autorização (Roles): As rotas são rigorosamente protegidas por tokens JWT e bloqueio por perfil. Isso significa que um usuário com o perfil de cliente não tem permissão para acessar rotas da cozinha ou alterar o estoque. Tentativas de acesso não autorizado retornam o erro 403 (Proibido).

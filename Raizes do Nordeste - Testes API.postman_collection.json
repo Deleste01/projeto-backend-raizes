@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "3f2b49a4-1a00-40b9-825d-30ed6d020b83",
+    "_postman_id": "15b945f0-64b2-4b5d-952c-986128c63f00",
     "name": "Raizes do Nordeste - Testes API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "49417959",
-    "_collection_link": "https://go.postman.co/collection/49417959-3f2b49a4-1a00-40b9-825d-30ed6d020b83?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/49417959-15b945f0-64b2-4b5d-952c-986128c63f00?source=collection_link"
   },
   "item": [
     {
@@ -87,7 +87,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODI2NjA1NTV9.zWSMYJjnFWaFNeXjTOOWs9OwduXW7OMeGD1tEo_TQd0",
+              "value": "",
               "type": "string"
             }
           ]
@@ -129,7 +129,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODI2NjA1NTV9.zWSMYJjnFWaFNeXjTOOWs9OwduXW7OMeGD1tEo_TQd0",
+              "value": "",
               "type": "string"
             }
           ]
@@ -173,7 +173,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODI2NjA1NTV9.zWSMYJjnFWaFNeXjTOOWs9OwduXW7OMeGD1tEo_TQd0",
+              "value": "",
               "type": "string"
             }
           ]
@@ -217,7 +217,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODI2NjA1NTV9.zWSMYJjnFWaFNeXjTOOWs9OwduXW7OMeGD1tEo_TQd0",
+              "value": "",
               "type": "string"
             }
           ]
@@ -226,7 +226,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\"status\": \"EM_PREPARACAO\"}",
+          "raw": "{\"status\": \"PRONTO\"}",
           "options": {
             "raw": {
               "language": "json"
@@ -296,7 +296,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODIxNDcyMjR9.9S2q_EbGstEhQ1HYfOznPi3jgxkz5qf8DVibKpKQpl4",
+              "value": "",
               "type": "string"
             }
           ]
@@ -338,7 +338,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODIxNDcyMjR9.9S2q_EbGstEhQ1HYfOznPi3jgxkz5qf8DVibKpKQpl4",
+              "value": "",
               "type": "string"
             }
           ]
@@ -380,7 +380,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODIxNDcyMjR9.9S2q_EbGstEhQ1HYfOznPi3jgxkz5qf8DVibKpKQpl4",
+              "value": "",
               "type": "string"
             }
           ]
@@ -422,7 +422,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjo0LCJleHAiOjE3ODYwMTk4NTN9.HQ2d_c80KJb722bxesD1Uh7MhWjlfUxicF0hivcdP0E",
+              "value": "",
               "type": "string"
             }
           ]
@@ -466,7 +466,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyLCJleHAiOjE3ODYwMTgyODB9.O8O8-sxEAJdWU5obRzIh6qjFdv2-BNffZBa_pQ2_TQU",
+              "value": "",
               "type": "string"
             }
           ]
