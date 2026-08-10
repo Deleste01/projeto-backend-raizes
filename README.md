@@ -45,8 +45,10 @@ Aviso para usuários de Windows: se o PowerShell bloquear a execução com um er
 3. Instalando as dependências
 Com o seu ambiente virtual ativado (você verá um (venv) no início da linha do terminal), instale as bibliotecas necessárias:
 
-Bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+
+Dica: Usar python -m pip em vez de apenas pip garante que os pacotes sejam instalados estritamente dentro do ambiente virtual, prevenindo o erro de ModuleNotFoundError que costuma acontecer em algumas configurações do Windows.
+
 4. Configurando as Variáveis de Ambiente
 A API precisa de um arquivo de configuração para rodar. Você só precisa duplicar o arquivo de exemplo.
 
